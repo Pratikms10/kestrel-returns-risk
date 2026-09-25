@@ -1,0 +1,18 @@
+# Client data and derived predictions must never enter a public repository.
+data/raw/
+outputs/predictions.csv
+outputs/submission-package.zip
+outputs/*.zip
+outputs/package_manifest.json
+
+# Generated model and evaluation artifacts.
+artifacts/
+work/
+logs/
+
+# Local environment and caches.
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.env

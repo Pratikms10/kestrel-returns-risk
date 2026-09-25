@@ -2,7 +2,9 @@
 
 ## GitHub Repository URL
 
-**REQUIRED HUMAN INPUT:** add the private repository URL after sharing reviewer access, or enter the reviewer-approved private ZIP route. Client data must not be public.
+https://github.com/Pratikms10/kestrel-returns-risk
+
+This public repository intentionally excludes the supplied client files, trained artifact, row-level predictions, logs, package manifest, and confidential ZIP. The complete package remains available only through the approved private transfer route.
 
 ## What did you build, and what business decision does it support? State the number and the rupees.
 

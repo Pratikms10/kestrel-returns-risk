@@ -1,0 +1,14 @@
+{
+  "action_rate": 0.19751908396946566,
+  "customer_not_seen_in_training_rate": 0.3148854961832061,
+  "maximum_score": 0.97087658,
+  "mean_score": 0.1065124247519084,
+  "minimum_score": 0.00551556,
+  "missing_customer_reference_rate": 0.0,
+  "missing_sku_reference_rate": 0.0,
+  "model_version": "kestrel-logistic-2026-09-25-v1",
+  "orders_at_or_above_action_threshold": 414,
+  "paid_inference_cost_inr": 0.0,
+  "rows": 2096,
+  "unique_order_ids": 2096
+}

@@ -1,0 +1,8 @@
+{
+  "environment": "local FastAPI TestClient; excludes network transit",
+  "maximum_latency_ms": 42.52690000430448,
+  "median_latency_ms": 28.714550000586314,
+  "p95_latency_ms": 35.78364500135648,
+  "paid_inference_cost_inr_per_prediction": 0.0,
+  "requests": 200
+}

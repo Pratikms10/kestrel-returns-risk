@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Kestrel pre-dispatch return-risk workbench" />
+    <title>Kestrel | Dispatch Risk Desk</title>
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand-mark" aria-hidden="true">K</div>
+      <div>
+        <p class="eyebrow">KESTREL HOME · D2C OPERATIONS</p>
+        <h1>Dispatch Risk Desk</h1>
+      </div>
+      <div class="status" id="status"><span></span>Checking model</div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">PRE-DISPATCH DECISION SUPPORT</p>
+          <h2>Intervene where a call is likely to pay back.</h2>
+          <p class="lede">
+            The score uses only information available before dispatch. It recommends a same-day
+            confirmation call—never an open-ended automatic hold.
+          </p>
+        </div>
+        <div class="policy-card">
+          <span>Operating rule</span>
+          <strong>Call at ≥ 15% risk</strong>
+          <small>Release within 24 hours · ₹45 per call</small>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <article class="panel input-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">01 · ORDER SNAPSHOT</p>
+              <h3>Score one order</h3>
+            </div>
+            <button class="ghost" id="reset" type="button">Reset example</button>
+          </div>
+          <label for="payload">JSON sent to <code>POST /predict</code></label>
+          <textarea id="payload" spellcheck="false" aria-label="Order JSON"></textarea>
+          <div class="input-footer">
+            <p id="validation">Edit any field, then run the decision.</p>
+            <button class="primary" id="score" type="button">Run decision <span>→</span></button>
+          </div>
+        </article>
+
+        <article class="panel result-panel" id="result" aria-live="polite">
+          <div class="empty-state" id="empty">
+            <div class="empty-icon">↗</div>
+            <p class="eyebrow">02 · MODEL OUTPUT</p>
+            <h3>Ready for an order</h3>
+            <p>Run the example to see a risk score, employee-readable reasons, and rupee economics.</p>
+          </div>
+
+          <div class="result-content hidden" id="result-content">
+            <div class="result-top">
+              <div>
+                <p class="eyebrow">02 · MODEL OUTPUT</p>
+                <p class="order-id" id="order-id"></p>
+              </div>
+              <span class="decision-chip" id="decision-chip"></span>
+            </div>
+
+            <div class="score-row">
+              <div class="score-ring" id="score-ring">
+                <div><strong id="risk-score">—</strong><span>return risk</span></div>
+              </div>
+              <div class="decision-copy">
+                <p class="eyebrow">RECOMMENDED ACTION</p>
+                <h3 id="action-title"></h3>
+                <p id="guidance"></p>
+              </div>
+            </div>
+
+            <div class="divider"></div>
+            <div>
+              <p class="eyebrow">WHY THIS SCORE</p>
+              <ol class="reasons" id="reasons"></ol>
+            </div>
+
+            <div class="economics">
+              <div><span>Call cost</span><strong id="call-cost"></strong></div>
+              <div><span>Expected avoided cost</span><strong id="avoided-cost"></strong></div>
+              <div><span>Expected net</span><strong id="net-benefit"></strong></div>
+            </div>
+
+            <div class="warnings hidden" id="warnings">
+              <strong>Data notes</strong>
+              <ul id="warning-list"></ul>
+            </div>
+            <p class="meta" id="meta"></p>
+          </div>
+        </article>
+      </section>
+
+      <footer>
+        <span>Local model · ₹0 paid inference cost</span>
+        <span>Decision support, not an automatic cancellation system</span>
+      </footer>
+    </main>
+    <script src="/static/app.js" defer></script>
+  </body>
+</html>
